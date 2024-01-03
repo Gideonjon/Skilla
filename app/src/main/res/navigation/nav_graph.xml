@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashScreen">
+
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="com.example.skilla.SplashScreen"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreen_to_secondSplashScreen"
+            app:destination="@id/secondSplashScreen"
+            app:enterAnim="@anim/bounce"
+            app:exitAnim="@anim/slide_down" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewpagerFragment"
+        android:name="com.example.skilla.viewpager.ViewpagerFragment"
+        android:label="fragment_viewpager"
+        tools:layout="@layout/fragment_viewpager" />
+    <fragment
+        android:id="@+id/secondSplashScreen"
+        android:name="com.example.skilla.SecondSplashScreen"
+        android:label="fragment_second_splash_screen"
+        tools:layout="@layout/fragment_second_splash_screen" >
+        <action
+            android:id="@+id/action_secondSplashScreen_to_viewpagerFragment"
+            app:destination="@id/viewpagerFragment"
+            app:enterAnim="@anim/bounce"
+            app:exitAnim="@anim/slide_down" />
+    </fragment>
+</navigation>
