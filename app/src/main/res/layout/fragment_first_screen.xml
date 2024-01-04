@@ -13,7 +13,6 @@
         android:layout_height="320dp"
         android:src="@drawable/first"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="22dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,10 +34,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="personalized path to learning, connect\nwith a vibrant community of learners, and\naccess expert mentors."
-        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="12dp"
-        android:textSize="18sp"
+        android:textSize="9sp"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:fontFamily="@font/poppins_regular"
         app:layout_constraintStart_toStartOf="parent"

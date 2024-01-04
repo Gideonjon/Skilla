@@ -13,7 +13,6 @@
         android:layout_height="320dp"
         android:src="@drawable/third"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="22dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -36,9 +35,9 @@
         android:layout_marginTop="12dp"
         android:fontFamily="@font/poppins_regular"
         android:text="Select your skills, set your goals, and\ncreate a learning path that's uniquely\n yours."
-        android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="9sp"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txt" />

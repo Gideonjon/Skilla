@@ -27,7 +27,7 @@ class SecondSplashScreen : Fragment() {
         Handler().postDelayed({
             Navigation.findNavController(view)
                 .navigate(R.id.action_secondSplashScreen_to_viewpagerFragment)
-        }, 9000)
+        }, 7000)
 
         return view
     }

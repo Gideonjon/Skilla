@@ -13,14 +13,20 @@
         <action
             android:id="@+id/action_splashScreen_to_secondSplashScreen"
             app:destination="@id/secondSplashScreen"
-            app:enterAnim="@anim/bounce"
-            app:exitAnim="@anim/slide_down" />
+            app:enterAnim="@anim/bounce" />
     </fragment>
     <fragment
         android:id="@+id/viewpagerFragment"
         android:name="com.example.skilla.viewpager.ViewpagerFragment"
         android:label="fragment_viewpager"
-        tools:layout="@layout/fragment_viewpager" />
+        tools:layout="@layout/fragment_viewpager" >
+        <action
+            android:id="@+id/action_viewpagerFragment_to_fragmentLogin"
+            app:destination="@id/fragmentLogin" />
+        <action
+            android:id="@+id/action_viewpagerFragment_to_fragmentRegister"
+            app:destination="@id/fragmentRegister" />
+    </fragment>
     <fragment
         android:id="@+id/secondSplashScreen"
         android:name="com.example.skilla.SecondSplashScreen"
@@ -29,7 +35,16 @@
         <action
             android:id="@+id/action_secondSplashScreen_to_viewpagerFragment"
             app:destination="@id/viewpagerFragment"
-            app:enterAnim="@anim/bounce"
-            app:exitAnim="@anim/slide_down" />
+            app:enterAnim="@android:anim/slide_in_left" />
     </fragment>
+    <fragment
+        android:id="@+id/fragmentLogin"
+        android:name="com.example.skilla.FragmentLogin"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/fragmentRegister"
+        android:name="com.example.skilla.FragmentRegister"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
 </navigation>

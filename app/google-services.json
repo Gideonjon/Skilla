@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "483437933915",
+    "firebase_url": "https://teamskilla-default-rtdb.firebaseio.com",
+    "project_id": "teamskilla",
+    "storage_bucket": "teamskilla.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:483437933915:android:bd3a49dfbbe42ebcd9167e",
+        "android_client_info": {
+          "package_name": "com.example.skilla"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdgMsd_QrjCX-JHoNQji-qkO7x5BhshQw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
