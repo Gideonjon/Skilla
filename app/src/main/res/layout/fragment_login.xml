@@ -113,7 +113,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:text="Remember Me"
+        android:button="@drawable/text_bg"
+        android:scaleX="3"
+        android:scaleY="3"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@id/psw"
         app:layout_constraintTop_toBottomOf="@id/psw" />
@@ -163,26 +165,30 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/apple"
         android:layout_width="178dp"
         android:layout_height="56dp"
+        app:layout_constraintEnd_toStartOf="@id/google"
         android:layout_marginTop="22dp"
-        app:layout_constraintStart_toStartOf="parent"
         android:background="@drawable/text_bg"
-        app:layout_constraintTop_toBottomOf="@id/right_line" >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/right_line">
 
 
         <ImageView
             android:id="@+id/apple_image"
-            android:layout_width="20dp"
+            android:layout_width="50dp"
             android:layout_height="20dp"
             android:src="@drawable/apple"
+            android:layout_marginEnd="58dp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
 
         <TextView
-            android:id="@+id/test"
+            android:id="@+id/test_"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_regular"
@@ -192,10 +198,90 @@
             app:layout_constraintBottom_toBottomOf="@id/apple_image"
             app:layout_constraintStart_toEndOf="@id/apple_image"
             app:layout_constraintTop_toTopOf="@id/apple_image" />
-        
-        
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-    
-    
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/google"
+        android:layout_width="178dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="22dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/apple"
+        android:background="@drawable/text_bg"
+        app:layout_constraintTop_toBottomOf="@id/right_line">
+
+
+        <ImageView
+            android:id="@+id/google_image"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:src="@drawable/google"
+            android:layout_marginEnd="58dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Google"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/google_image"
+            app:layout_constraintStart_toEndOf="@id/google_image"
+            app:layout_constraintTop_toTopOf="@id/google_image" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/google"
+        android:layout_marginTop="22dp"
+        android:layout_marginHorizontal="32dp"
+        android:background="@drawable/signup"
+        android:text="Sign In"
+        android:textSize="14sp"
+        android:fontFamily="@font/poppins_regular"
+        android:textColor="@color/white"
+        android:textAllCaps="false"/>
+
+    <TextView
+        android:id="@+id/dont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:text="Don't have an account?"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_login" />
+
+
+    <TextView
+        android:id="@+id/sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign up"
+        android:textColor="#6949FF"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/dont"
+        app:layout_constraintTop_toTopOf="@id/dont"
+        app:layout_constraintBottom_toBottomOf="@id/dont"
+        android:layout_marginStart="4dp"/>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
