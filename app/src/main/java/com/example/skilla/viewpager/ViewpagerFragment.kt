@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
+import com.example.skilla.R
 import com.example.skilla.adapters.Onboarding
 import com.example.skilla.databinding.FragmentViewpagerBinding
 import com.example.skilla.onboarding.FirstScreen
@@ -38,6 +40,21 @@ class ViewpagerFragment : Fragment() {
         )
         binding.viewpager.adapter = adapter
         binding.indicators.attachTo(binding.viewpager)
+
+
+        binding.signup.setOnClickListener {
+            Navigation.findNavController(view)
+                .navigate(R.id.action_viewpagerFragment_to_fragmentRegister)
+        }
+
+        binding.login.setOnClickListener {
+            Navigation.findNavController(view)
+                .navigate(R.id.action_viewpagerFragment_to_fragmentLogin)
+        }
+
+
+
+
 
         return view
     }

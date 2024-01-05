@@ -7,13 +7,17 @@
 
     <fragment
         android:id="@+id/splashScreen"
-        android:name="com.example.skilla.SplashScreen"
+        android:name="com.example.skilla.fragments.SplashScreen"
         android:label="fragment_splash_screen"
         tools:layout="@layout/fragment_splash_screen" >
         <action
             android:id="@+id/action_splashScreen_to_secondSplashScreen"
             app:destination="@id/secondSplashScreen"
             app:enterAnim="@anim/bounce" />
+        <action
+            android:id="@+id/action_splashScreen_to_verificationEmail"
+            app:destination="@id/verificationEmail"
+            app:enterAnim="@anim/slide_right" />
     </fragment>
     <fragment
         android:id="@+id/viewpagerFragment"
@@ -22,14 +26,16 @@
         tools:layout="@layout/fragment_viewpager" >
         <action
             android:id="@+id/action_viewpagerFragment_to_fragmentLogin"
-            app:destination="@id/fragmentLogin" />
+            app:destination="@id/fragmentLogin"
+            app:enterAnim="@anim/slide_right" />
         <action
             android:id="@+id/action_viewpagerFragment_to_fragmentRegister"
-            app:destination="@id/fragmentRegister" />
+            app:destination="@id/fragmentRegister"
+            app:enterAnim="@anim/slide_right" />
     </fragment>
     <fragment
         android:id="@+id/secondSplashScreen"
-        android:name="com.example.skilla.SecondSplashScreen"
+        android:name="com.example.skilla.fragments.SecondSplashScreen"
         android:label="fragment_second_splash_screen"
         tools:layout="@layout/fragment_second_splash_screen" >
         <action
@@ -39,12 +45,22 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentLogin"
-        android:name="com.example.skilla.FragmentLogin"
+        android:name="com.example.skilla.fragments.FragmentLogin"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
     <fragment
         android:id="@+id/fragmentRegister"
-        android:name="com.example.skilla.FragmentRegister"
+        android:name="com.example.skilla.fragments.FragmentRegister"
         android:label="fragment_register"
-        tools:layout="@layout/fragment_register" />
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_fragmentRegister_to_verificationEmail"
+            app:destination="@id/verificationEmail"
+            app:enterAnim="@anim/slide_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/verificationEmail"
+        android:name="com.example.skilla.VerificationEmail"
+        android:label="fragment_verification_email"
+        tools:layout="@layout/fragment_verification_email" />
 </navigation>

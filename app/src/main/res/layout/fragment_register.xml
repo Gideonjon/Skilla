@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:layout_width="match_parent"
+<ScrollView
+    android:id="@+id/scroll_view"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
     xmlns:android="http://schemas.android.com/apk/res/android">
@@ -8,7 +10,82 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".FragmentRegister">
+    tools:context=".fragments.FragmentRegister">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/toast_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        app:cardBackgroundColor="#6949FF"
+        android:visibility="invisible"
+        android:layout_marginTop="12dp"
+        app:cardCornerRadius="7dp"
+        app:cardElevation="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_marginBottom="8dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image_1"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="12dp"
+                android:src="@drawable/baseline_celebration_24"
+                android:layout_marginTop="7dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/image_2"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="2dp"
+                android:src="@drawable/baseline_celebration_24"
+                android:layout_marginTop="7dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/image_1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/image_3"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="7dp"
+                android:src="@drawable/baseline_celebration_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/image_2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/toast_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome Back, we missed you...."
+                app:layout_constraintTop_toTopOf="parent"
+                android:visibility="invisible"
+                android:textColor="@color/white"
+                android:layout_marginTop="7dp"
+                android:textSize="12sp"
+                android:fontFamily="@font/poppins_regular"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/image_3"
+                android:layout_marginStart="4dp"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
 
 
@@ -17,13 +94,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/poppins_black"
         android:text="Hi, Welcome!"
         android:textColor="@color/black"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/toast_card"/>
 
     <ImageView
         android:id="@+id/img"
@@ -39,7 +116,7 @@
         android:id="@+id/textEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/poppins_regular"
         android:text="Email Address"
         android:textColor="@color/black"
@@ -78,7 +155,7 @@
         android:id="@+id/textpsw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/poppins_regular"
         android:text="Password"
         android:textColor="@color/black"
@@ -251,7 +328,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/google"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="18dp"
         android:layout_marginHorizontal="32dp"
         android:background="@drawable/signup"
         android:text="Sign Up"
@@ -274,7 +351,7 @@
 
 
     <TextView
-        android:id="@+id/sign_up"
+        android:id="@+id/sign_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sign in"

@@ -1,4 +1,4 @@
-package com.example.skilla
+package com.example.skilla.fragments
 
 import android.os.Bundle
 import android.os.Handler
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import com.example.skilla.R
 import com.example.skilla.databinding.FragmentSplashScreenBinding
 
 class SplashScreen : Fragment() {
