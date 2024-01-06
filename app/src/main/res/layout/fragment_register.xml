@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/scroll_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
     xmlns:android="http://schemas.android.com/apk/res/android">
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.FragmentRegister">
 
 
@@ -93,7 +92,7 @@
         android:id="@+id/txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="22dp"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/poppins_black"
         android:text="Hi, Welcome!"
@@ -224,6 +223,7 @@
         app:layout_constraintTop_toBottomOf="@id/checkBox" />
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="or sign up"
@@ -344,7 +344,7 @@
         android:layout_marginTop="17dp"
         android:text="Have an account?"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_signup" />
@@ -356,11 +356,24 @@
         android:layout_height="wrap_content"
         android:text="Sign in"
         android:textColor="#6949FF"
-        android:textSize="12sp"
+        android:textSize="18sp"
         app:layout_constraintStart_toEndOf="@id/dont"
         app:layout_constraintTop_toTopOf="@id/dont"
         app:layout_constraintBottom_toBottomOf="@id/dont"
         android:layout_marginStart="4dp"/>
+
+
+    <ProgressBar
+        android:id="@+id/progress_Bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="invisible"
+        style="?android:attr/progressBarStyle"
+        android:indeterminateDrawable="@drawable/progress_icon"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

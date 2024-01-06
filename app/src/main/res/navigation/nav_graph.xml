@@ -47,7 +47,12 @@
         android:id="@+id/fragmentLogin"
         android:name="com.example.skilla.fragments.FragmentLogin"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_fragmentLogin_to_fragmentRegister"
+            app:destination="@id/fragmentRegister"
+            app:enterAnim="@anim/slide_right" />
+    </fragment>
     <fragment
         android:id="@+id/fragmentRegister"
         android:name="com.example.skilla.fragments.FragmentRegister"
@@ -57,10 +62,13 @@
             android:id="@+id/action_fragmentRegister_to_verificationEmail"
             app:destination="@id/verificationEmail"
             app:enterAnim="@anim/slide_right" />
+        <action
+            android:id="@+id/action_fragmentRegister_to_fragmentLogin"
+            app:destination="@id/fragmentLogin" />
     </fragment>
     <fragment
         android:id="@+id/verificationEmail"
-        android:name="com.example.skilla.VerificationEmail"
+        android:name="com.example.skilla.fragments.VerificationEmail"
         android:label="fragment_verification_email"
         tools:layout="@layout/fragment_verification_email" />
 </navigation>

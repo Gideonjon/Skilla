@@ -6,7 +6,10 @@ import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
+import com.example.skilla.R
 import com.example.skilla.databinding.FragmentLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -28,46 +31,59 @@ class FragmentLogin : Fragment() {
         auth = FirebaseAuth.getInstance()
 
 
-        binding.btnLogin.visibility = View.INVISIBLE
-        binding.toastCard.visibility = View.INVISIBLE
+
+        val animationBounce = AnimationUtils.loadAnimation(context, R.anim.slide_right)
 
 
         binding.btnLogin.setOnClickListener {
-            if (!Patterns.EMAIL_ADDRESS.matcher(binding.emailEt.text.toString()).matches())
+            if (!Patterns.EMAIL_ADDRESS.matcher(binding.emailEt.text.toString()).matches()) {
                 binding.email.error = "Input Correct Email"
-            binding.email.requestFocus()
-            binding.btnLogin.visibility = View.INVISIBLE
-            binding.toastCard.visibility = View.INVISIBLE
-        }
-        if (binding.pswEt.text.toString().isEmpty()) {
-            binding.psw.error = "Input Password"
-            binding.psw.requestFocus()
-            binding.btnLogin.visibility = View.INVISIBLE
-            binding.toastCard.visibility = View.INVISIBLE
+                binding.email.requestFocus()
 
-        } else {
-            binding.btnLogin.visibility = View.VISIBLE
-            auth.signInWithEmailAndPassword(
-                binding.emailEt.text.toString(),
-                binding.pswEt.text.toString()
-            )
-                .addOnCompleteListener {
-                    if (it.isSuccessful) {
+
+            }
+            if (binding.pswEt.text.toString().isEmpty()) {
+                binding.psw.error = "Input Password"
+                binding.psw.requestFocus()
+
+
+
+            } else {
+                binding.btnLogin.visibility = View.VISIBLE
+                auth.signInWithEmailAndPassword(
+                    binding.emailEt.text.toString(),
+                    binding.pswEt.text.toString()
+                )
+                    .addOnCompleteListener {
+                        if (it.isSuccessful) {
+                            binding.toastCard.visibility = View.VISIBLE
+                            binding.toastTxt.text = "Welcome Back, we missed you ...."
+                            binding.toastTxt.visibility = View.VISIBLE
+                            binding.progressBar.visibility = View.VISIBLE
+                            binding.scrollView.setBackgroundColor(Color.GRAY)
+
+
+                        }
+
+                    }.addOnFailureListener {
+
                         binding.toastCard.visibility = View.VISIBLE
-                        binding.toastTxt.text = "Welcome Back, we missed you ...."
+
+                        binding.toastTxt.text = "Check Your Internet Connection."
+
+                        binding.toastTxt.startAnimation(animationBounce)
                         binding.toastTxt.visibility = View.VISIBLE
-                        binding.scrollView.setBackgroundColor(Color.GRAY)
-
-
+                        binding.progressBar.visibility = View.INVISIBLE
+                        binding.btnLogin.visibility = View.VISIBLE
+                        binding.image1.visibility = View.INVISIBLE
+                        binding.image2.visibility = View.INVISIBLE
+                        binding.image3.visibility = View.INVISIBLE
                     }
+            }
+        }
 
-                }.addOnFailureListener {
-                    binding.toastCard.visibility = View.VISIBLE
-                    binding.toastTxt.text = "Check Your Internet Connection."
-                    binding.toastTxt.visibility = View.VISIBLE
-                    binding.btnLogin.visibility = View.INVISIBLE
-
-                }
+        binding.signUp.setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_fragmentLogin_to_fragmentRegister)
         }
 
         return view

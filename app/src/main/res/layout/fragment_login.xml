@@ -17,7 +17,7 @@
             android:id="@+id/txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
+            android:layout_marginStart="22dp"
             android:layout_marginTop="12dp"
             android:fontFamily="@font/poppins_black"
             android:text="Hi, Welcome!"
@@ -269,7 +269,7 @@
             android:layout_marginTop="17dp"
             android:text="Don't have an account?"
             android:textColor="@color/black"
-            android:textSize="12sp"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btn_login" />
@@ -282,7 +282,7 @@
             android:layout_marginStart="4dp"
             android:text="Sign up"
             android:textColor="#6949FF"
-            android:textSize="12sp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@id/dont"
             app:layout_constraintStart_toEndOf="@id/dont"
             app:layout_constraintTop_toTopOf="@id/dont" />
@@ -361,6 +361,18 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
+
+        <ProgressBar
+            android:id="@+id/progress_Bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="invisible"
+            style="?android:attr/progressBarStyle"
+            android:indeterminateDrawable="@drawable/progress_icon"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
 
