@@ -31,14 +31,11 @@ class SplashScreen : Fragment() {
 
         auth = FirebaseAuth.getInstance()
 
-        Handler(Looper.myLooper()!!).postDelayed(Runnable {
-            if (auth.currentUser != null) {
-                val intent = Intent(requireContext(), HomeActivity::class.java)
-                activity?.startActivity(intent)
-            } else {
+        Handler().postDelayed( {
+
                 Navigation.findNavController(view)
                     .navigate(R.id.action_splashScreen_to_secondSplashScreen)
-            }
+
 
         }, 7000)
         return view
