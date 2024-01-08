@@ -9,5 +9,24 @@
         android:id="@+id/home2"
         android:name="com.example.skilla.fragments.Home"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home2_to_search2"
+            app:destination="@id/search2"
+            app:enterAnim="@anim/slide_right" />
+        <action
+            android:id="@+id/action_home2_to_space"
+            app:destination="@id/space"
+            app:enterAnim="@anim/slide_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/search2"
+        android:name="com.example.skilla.fragments.Search"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/space"
+        android:name="com.example.skilla.space"
+        android:label="fragment_space"
+        tools:layout="@layout/fragment_space" />
 </navigation>
