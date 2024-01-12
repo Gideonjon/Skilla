@@ -26,7 +26,12 @@
         tools:layout="@layout/fragment_search" />
     <fragment
         android:id="@+id/space"
-        android:name="com.example.skilla.space"
+        android:name="com.example.skilla.fragments.space"
         android:label="fragment_space"
         tools:layout="@layout/fragment_space" />
+    <fragment
+        android:id="@+id/spaceHub"
+        android:name="com.example.skilla.fragments.SpaceHub"
+        android:label="fragment_space_hub"
+        tools:layout="@layout/fragment_space_hub" />
 </navigation>

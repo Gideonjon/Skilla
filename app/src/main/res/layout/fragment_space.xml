@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".space">
+    tools:context=".fragments.space">
 
     <TextView
         android:id="@+id/create_txt"
@@ -50,68 +50,196 @@
         android:id="@+id/txt_sapce"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="22dp"
+        android:fontFamily="@font/poppins_medium"
         android:text="Space name"
-        android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/space_"
-        app:layout_constraintStart_toStartOf="@id/create_txt"
         android:textColor="@color/black"
-        android:fontFamily="@font/poppins_regular"/>
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/space_name"
+        app:layout_constraintTop_toBottomOf="@id/space_" />
 
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/space_name"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="12dp"
+        app:hintAnimationEnabled="false"
+        app:hintEnabled="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_sapce">
 
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/space"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/SpaceName_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="163dp">
+            android:background="@drawable/space_bg"
+            android:hint="e.g The Designer’s Guide To Ui/Ux"
+            android:textColor="@color/black"
+            android:textColorHint="#828184" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="hint" />
-        </com.google.android.material.textfield.TextInputLayout>
-<!--
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="391dp"
+    <TextView
+        android:id="@+id/txt_space_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Space Category"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/space_name"
+        app:layout_constraintTop_toBottomOf="@id/space_name" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/space_category"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="12dp"
+        app:hintAnimationEnabled="false"
+        app:hintEnabled="false"
+        app:layout_constraintTop_toBottomOf="@id/txt_space_category">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/SpaceCategory_et"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="329dp">
+            android:background="@drawable/space_bg"
+            android:hint="Bell"
+            android:textColor="@color/black"
+            android:textColorHint="#828184" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="hint" />
-        </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:id="@+id/txt_space_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Description"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/space_name"
+        app:layout_constraintTop_toBottomOf="@id/space_category" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="391dp"
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/space_description"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="12dp"
+        app:hintAnimationEnabled="false"
+        app:hintEnabled="false"
+        app:layout_constraintTop_toBottomOf="@id/txt_space_description">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/SpaceDescription_et"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="269dp">
+            android:background="@drawable/space_bg"
+            android:hint="e.g. this space is all about ..."
+            android:textColor="@color/black"
+            android:textColorHint="#828184" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="hint" />
-        </com.google.android.material.textfield.TextInputLayout>
+    <TextView
+        android:id="@+id/txt_space_privacy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Privacy"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/space_name"
+        app:layout_constraintTop_toBottomOf="@id/space_description" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="391dp"
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/space_privacy"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="12dp"
+        app:hintAnimationEnabled="false"
+        app:hintEnabled="false"
+        app:layout_constraintTop_toBottomOf="@id/txt_space_privacy">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/SpacePrivacy_et"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="139dp">
+            android:background="@drawable/space_bg"
+            android:hint="bell"
+            android:textColor="@color/black"
+            android:textColorHint="#828184" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="hint" />
-        </com.google.android.material.textfield.TextInputLayout>
--->
+    <TextView
+        android:id="@+id/txt_space_tags"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Space Tags"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/space_name"
+        app:layout_constraintTop_toBottomOf="@id/space_privacy" />
 
-    -->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/space_tags"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginTop="12dp"
+        app:hintAnimationEnabled="false"
+        app:hintEnabled="false"
+        app:layout_constraintTop_toBottomOf="@id/txt_space_tags">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/SpaceTags_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/space_bg"
+            android:hint="e.g. this space is all about ..."
+            android:textColor="@color/black"
+            android:textColorHint="#828184" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/upload_image"
+        android:layout_width="382dp"
+        android:layout_height="176dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/baseline_photo_size_select_actual_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/space_tags" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="44dp"
+        android:layout_marginTop="12dp"
+        android:background="#6949FF"
+        android:fontFamily="@font/poppins_medium"
+        android:text="Create space"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/upload_image" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
