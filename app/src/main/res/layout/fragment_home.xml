@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     tools:context=".fragments.Home">
 
     <androidx.cardview.widget.CardView
@@ -20,8 +16,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_marginBottom="12dp"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginBottom="12dp">
 
 
             <de.hdodenhof.circleimageview.CircleImageView
@@ -63,9 +59,9 @@
                 android:id="@+id/search"
                 android:layout_width="18dp"
                 android:layout_height="18dp"
-                app:layout_constraintEnd_toStartOf="@id/gift"
                 android:src="@drawable/outline_search_24"
                 app:layout_constraintBottom_toBottomOf="@id/txt_welcome"
+                app:layout_constraintEnd_toStartOf="@id/gift"
                 app:layout_constraintStart_toEndOf="@id/txt_welcome"
                 app:layout_constraintTop_toTopOf="@id/txt_welcome" />
 
@@ -83,75 +79,76 @@
                 android:id="@+id/notification"
                 android:layout_width="18dp"
                 android:layout_height="18dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/gift"
+                android:src="@drawable/outline_notifications_24"
                 app:layout_constraintBottom_toBottomOf="@id/gift"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/gift"
-                android:src="@drawable/outline_notifications_24" />
+                app:layout_constraintTop_toTopOf="@id/gift" />
 
 
             <com.google.android.material.chip.ChipGroup
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:chipSpacingHorizontal="0.1dp"
-                android:orientation="horizontal"
-                app:layout_constraintStart_toStartOf="@id/user_image"
                 android:layout_marginTop="12dp"
+                app:singleSelection="true"
+                android:orientation="horizontal"
+                app:chipSpacingHorizontal="0.1dp"
+                app:layout_constraintStart_toStartOf="@id/user_image"
                 app:layout_constraintTop_toBottomOf="@id/user_name">
 
 
                 <com.google.android.material.chip.Chip
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="All"
-                    android:textSize="12sp"
                     android:fontFamily="@font/poppins_regular"
+                    android:text="All"
                     android:textColor="@color/white"
+                    android:textSize="12sp"
                     app:chipBackgroundColor="#6949FF" />
 
                 <com.google.android.material.chip.Chip
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ui/Ux"
-                    android:textSize="12sp"
                     android:fontFamily="@font/poppins_regular"
-                    app:chipBackgroundColor="@color/white"
-                    android:textColor="@color/black" />
+                    android:text="Ui/Ux"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    app:chipBackgroundColor="@color/white" />
 
                 <com.google.android.material.chip.Chip
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Photography"
-                    android:textSize="12sp"
                     android:fontFamily="@font/poppins_regular"
+                    android:text="Photography"
                     android:textColor="@color/black"
+                    android:textSize="12sp"
                     app:chipBackgroundColor="#FFFFFF" />
 
                 <com.google.android.material.chip.Chip
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
                     android:text="Python"
-                    android:textSize="12sp"
-                    android:fontFamily="@font/poppins_regular"
                     android:textColor="@color/black"
+                    android:textSize="12sp"
                     app:chipBackgroundColor="@color/white" />
 
                 <com.google.android.material.chip.Chip
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
                     android:text="Flutter"
-                    android:textSize="12sp"
-                    android:fontFamily="@font/poppins_regular"
                     android:textColor="@color/black"
+                    android:textSize="12sp"
                     app:chipBackgroundColor="@color/white" />
 
                 <com.google.android.material.chip.Chip
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Binance"
-                    android:textSize="12sp"
                     android:fontFamily="@font/poppins_regular"
+                    android:text="Binance"
                     android:textColor="@color/black"
+                    android:textSize="12sp"
                     app:chipBackgroundColor="@color/white" />
 
             </com.google.android.material.chip.ChipGroup>
@@ -163,27 +160,44 @@
     </androidx.cardview.widget.CardView>
 
 
-    <androidx.recyclerview.widget.RecyclerView
+    <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="12dp"
+        android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:listitem="@layout/course"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/card_details" />
+        app:layout_constraintTop_toBottomOf="@id/card_details">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="7dp"
-        android:backgroundTint="#6949FF"
-        android:layout_marginBottom="7dp"
-        android:src="@drawable/baseline_add_24"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/course" />
 
 
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:backgroundTint="#6949FF"
+                android:src="@drawable/baseline_add_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+
+
+
